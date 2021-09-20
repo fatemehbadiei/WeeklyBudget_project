@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <title>برنامه بودجه بندی هفتگی</title>
+  </head>
+  <body dir="rtl">
+    <div class="container">
+        <header>
+                <h1 class="text-center">برنامه بودجه بندی هفتگی</h1>
+        </header>
+        <section class="main-content">
+            <div class="row">
+                <div class="col ">
+                    <div class="content primary">
+                        <h2 class="text-center">هزینه ها رو اینجا اضافه کن...</h2>
+                            <form id="add-expense" action="#">
+                                <div class="form-group">
+                                    <label for="expense">اسم:</label>
+                                    <input type="text" class="form-control" id="expense" placeholder="مثلا: ‌تاکسی یا رستوران">
+                                </div>
+                                <div class="form-group">
+                                    <label for="amount"> قیمت به تومان:</label>
+                                    <input type="number" class="form-control" id="amount" placeholder="۲۰۰۰۰">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">اضافه کردن</button>
+                            </form>
+
+                    </div> <!--.content-->
+                </div> <!--.col-->
+
+                <div class="col">
+                    <div class="content secondary">
+
+                        <h2 class="text-center">لیست هزینه ها</h2>
+
+                        <div id="expenses">
+                            <ul class="list-group"></ul>
+                        </div>
+                        <div id="budget" class="budget">
+                            <div class="alert alert-primary">
+                                <p>بودجه هفته: <span id="total"></span> تومان  </p>
+                            </div>
+                            <div class="restante alert alert-success">
+                                <p>باقی مانده: <span id="left"></span> تومان <span id="left"></span></p>
+                            </div>
+                        </div> <!--.budget-->
+                        <form oninput="result.value = myinput.value">
+                            <label for="range">درصد قرمز:</label>
+                            <input type="range" class="form-control-range" name="myinput" min="0" max="100" step="5" tabindex="5" id="range" value="0">
+                            <output name="result"></output>
+                        </form>
+                        <form oninput="result1.value = myinput1.value">
+                            <label for="range1">درصد زرد:</label>
+                            <input type="range" class="form-control-range" name="myinput1" min="0" max="100" step="5" tabindex="5" id="range1" value="0">
+                            <output name="result1"></output>
+                        </form>
+                    </div> <!--.content-->
+
+                </div><!--.col-->
+            </div> <!--.row-->
+        </section>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/slim-min.js"></script>
+    <script src="js/umd-popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
